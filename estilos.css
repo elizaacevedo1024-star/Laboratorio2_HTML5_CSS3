@@ -1,0 +1,194 @@
+/* ============================================================
+   Laboratorio #2 · HTML5 y CSS3 — estilos.css
+   Identidad visual: "cuaderno de código" — oscuro, tipografía
+   geométrica para títulos y textos monoespaciados para datos.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Mono:wght@400;600&display=swap');
+
+:root {
+  --bg: #12151c;
+  --surface: #1a1f29;
+  --surface-alt: #212836;
+  --text: #e6e9ef;
+  --text-muted: #9aa4b4;
+  --accent: #d9a15b;   /* ámbar — comentarios de código */
+  --accent-2: #5fb0a3; /* verde azulado — enlaces y acentos fríos */
+  --border: #2c3444;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'IBM Plex Sans', system-ui, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 2.5em 1.5em;
+}
+
+main, .contenedor {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  margin-top: 0;
+}
+
+a { color: var(--accent-2); }
+
+.volver {
+  display: inline-block;
+  margin-bottom: 2em;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.9em;
+}
+.volver:hover { color: var(--accent-2); }
+
+/* ---------- Tablas (Tabla #1 y #2) ---------- */
+
+.tabla {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 14px;
+  text-align: right;
+  width: 100%;
+  max-width: 600px;
+  border-collapse: collapse;
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+
+.tabla caption {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.1em;
+  text-align: left;
+  color: var(--accent);
+  padding: 0.6em 0;
+}
+
+.tabla th {
+  padding: 8px 10px;
+  font-size: 13px;
+  background: linear-gradient(180deg, #2a3444, #1c2330);
+  color: var(--text);
+  border-right: 1px solid var(--accent-2);
+  border-bottom: 1px solid var(--accent-2);
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.tabla .modo1 td,
+.tabla td {
+  padding: 8px 10px;
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  text-align: right;
+}
+
+.tabla .modo1 td {
+  color: var(--text);
+  text-align: left;
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+.tabla .modo2 {
+  border-right-color: var(--surface-alt);
+}
+
+.tabla .modo2 td {
+  font-size: 12px;
+  font-weight: 600;
+  background: var(--surface-alt);
+  color: var(--accent);
+  border-bottom-style: solid;
+  border-right-color: var(--surface-alt);
+  text-align: left;
+}
+
+/* ---------- Ejemplo #3: cita y párrafo ---------- */
+
+p strong {
+  color: var(--accent);
+  background: rgba(217, 161, 91, 0.12);
+  padding: 0 0.2em;
+  border-radius: 3px;
+}
+
+q {
+  font-style: italic;
+}
+
+/* ---------- Ejemplo #4: sección con clase/ID ---------- */
+
+.card-seccion {
+  background: var(--surface);
+  border-left: 4px solid var(--accent-2);
+  padding: 1.5em;
+  margin-bottom: 1em;
+  border-radius: 4px;
+}
+
+#footer-recurso {
+  margin-top: 1em;
+  padding-top: 0.5em;
+  border-top: 1px solid var(--border);
+  font-size: 0.9em;
+  color: var(--text-muted);
+}
+
+.link-externo {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+.link-externo:hover { text-decoration: underline; }
+
+code {
+  font-family: 'IBM Plex Mono', monospace;
+  background: var(--surface-alt);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  color: var(--accent-2);
+}
+
+/* ---------- Ejemplo #5: estructura semántica ---------- */
+
+header, nav, main.seccion-main, section, article, aside, footer.pie {
+  padding: 1.5em;
+  margin: 0.5em 0;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+header {
+  background: var(--surface);
+  border-left: 4px solid var(--accent);
+}
+
+nav { background: var(--surface-alt); }
+nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 1.5em; }
+nav a { text-decoration: none; font-weight: 600; }
+nav a:hover { color: var(--accent); }
+
+main.seccion-main { border: none; padding: 0; }
+
+section { background: var(--surface); }
+article {
+  background: var(--surface-alt);
+  border-color: var(--border);
+}
+aside {
+  background: rgba(217, 161, 91, 0.08);
+  border-color: var(--accent);
+}
+footer.pie {
+  background: var(--surface);
+  color: var(--text-muted);
+  text-align: center;
+  font-size: 0.9em;
+}
